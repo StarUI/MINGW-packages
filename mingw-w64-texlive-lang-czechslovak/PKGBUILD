@@ -1,14 +1,15 @@
-# Maintainer: @naveen521kk on Github, Naveen M K <naveen@syrusdark.website>
+# Maintainer: @naveen521kk on Github, Naveen M K <naveen521kk@gmail.com>
 
 _realname=texlive-lang-czechslovak
 pkgbase=mingw-w64-${_realname}
 pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
-pkgver=2021.20210506
+pkgver=2021.20210519
 _revnr=${pkgver#2021.}
-pkgrel=1
+pkgrel=2
 pkgdesc="TeX Live - Czech/Slovak (mingw-w64)"
 license=('GPL')
 arch=('any')
+mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64')
 depends=(
     "${MINGW_PACKAGE_PREFIX}-texlive-core"
 )
@@ -23,8 +24,8 @@ source=("${_realname}-${_revnr}.tar.xz::https://github.com/msys2/msys2-texlive/r
     "${_realname}-extra-files.tar.xz::https://github.com/msys2/msys2-texlive/releases/download/${_revnr}/${_realname}-extra-files.tar.xz")
 options=('!emptydirs')
 sha256sums=(
-    "a9ea4820963263d9707a74f55d77483d5d3252539aa008e196eb75d58c3d3036"
-    "ae285f28e366fb66a8a66cd8e6ee0f6d8e1949b508b9d43eca10c4b2866f097d"
+    "7f2cd3c0506c7c74f3ecf154b6ac36c29f5f43c20e3e073afbc88b20cf11a872"
+    "6445dbb44fb11fcdd754eb0357430209136c2d1ad1081d21a5628a8ea21fb7d5"
 )
 
 build() {

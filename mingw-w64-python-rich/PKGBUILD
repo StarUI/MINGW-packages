@@ -1,22 +1,21 @@
-# Maintainer: Naveen M K <naveen@syrusdark.website>
+# Maintainer: Naveen M K <naveen521kk@gmail.com>
 
 _realname=rich
 pkgbase=mingw-w64-python-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-python-${_realname}")
-pkgver=10.1.0
-pkgrel=1
+pkgver=10.4.0
+pkgrel=2
 pkgdesc="Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal (mingw-w64)"
 arch=('any')
-mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64')
+mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64' 'clang32')
 url="https://github.com/willmcgugan/rich"
 license=('MIT')
 depends=("${MINGW_PACKAGE_PREFIX}-python-colorama"
          "${MINGW_PACKAGE_PREFIX}-python-commonmark"
-         "${MINGW_PACKAGE_PREFIX}-python-pygments"
-         "${MINGW_PACKAGE_PREFIX}-python-typing_extensions")
+         "${MINGW_PACKAGE_PREFIX}-python-pygments")
 makedepends=("${MINGW_PACKAGE_PREFIX}-python-setuptools")
 source=("${_realname}-${pkgver}.tar.gz::https://pypi.io/packages/source/r/${_realname}/${_realname}-${pkgver}.tar.gz")
-sha256sums=('8f05431091601888c50341697cfc421dc398ce37b12bca0237388ef9c7e2c9e9')
+sha256sums=('6e8a3e2c61e6cf6193bfcffbb89865a0973af7779d3ead913fdbbbc33f457c2c')
 
 prepare() {
   cd "${srcdir}"

@@ -7,12 +7,12 @@ provides=("${MINGW_PACKAGE_PREFIX}-python3-${_realname}")
 conflicts=("${MINGW_PACKAGE_PREFIX}-python3-${_realname}")
 replaces=("${MINGW_PACKAGE_PREFIX}-python3-${_realname}")
 pkgver=1.14.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Foreign Function Interface for Python calling C code (mingw-w64)"
 url='https://cffi.readthedocs.io/'
 license=('MIT')
 arch=('any')
-mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64' 'clang32')
+mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64' 'clang32' 'clangarm64')
 depends=("${MINGW_PACKAGE_PREFIX}-libffi"
          "${MINGW_PACKAGE_PREFIX}-python-pycparser")
 makedepends=("${MINGW_PACKAGE_PREFIX}-python-setuptools")

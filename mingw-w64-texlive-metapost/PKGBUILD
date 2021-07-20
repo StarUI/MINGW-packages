@@ -1,14 +1,15 @@
-# Maintainer: @naveen521kk on Github, Naveen M K <naveen@syrusdark.website>
+# Maintainer: @naveen521kk on Github, Naveen M K <naveen521kk@gmail.com>
 
 _realname=texlive-metapost
 pkgbase=mingw-w64-${_realname}
 pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
-pkgver=2021.20210506
+pkgver=2021.20210519
 _revnr=${pkgver#2021.}
-pkgrel=1
+pkgrel=2
 pkgdesc="TeX Live - MetaPost and Metafont packages (mingw-w64)"
 license=('GPL')
 arch=('any')
+mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64')
 depends=(
     "${MINGW_PACKAGE_PREFIX}-texlive-core"
 )
@@ -26,8 +27,8 @@ source=("${_realname}-${_revnr}.tar.xz::https://github.com/msys2/msys2-texlive/r
     "${_realname}-extra-files.tar.xz::https://github.com/msys2/msys2-texlive/releases/download/${_revnr}/${_realname}-extra-files.tar.xz")
 options=('!emptydirs')
 sha256sums=(
-    "db462e4a32c8a2e8e01b74abf1605c8664216e54e8afd7993e172f0f8ab27663"
-    "9a088863f9b3d13892919312b0f6e89b9137179ef167b96198764db199af1ed9"
+    "abfc5cf572b8ca84206a035496abd85947019090313690111c7aa452e5da7e18"
+    "bb584404a647a0c449646e61397e14efe6354bf4b914f5d7c1dee61b69fea9f2"
 )
 
 build() {

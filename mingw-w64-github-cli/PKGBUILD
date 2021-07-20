@@ -1,9 +1,9 @@
-# Maintainer: @naveen521kk on Github <naveen@syrusdark.website>
+# Maintainer: @naveen521kk on Github <naveen521kk@gmail.com>
 
 _realname=github-cli
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-pkgver=1.9.2
+pkgver=1.12.1
 pkgrel=1
 pkgdesc='The GitHub CLI (mingw-w64)'
 arch=('any')
@@ -17,7 +17,7 @@ optdepends=("git: To interact with repositories")
 options=('!strip')
 source=("$_realname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
         "gh")
-sha256sums=('a1d5a326c9311f8d208a0e5b5ba47023c3982494063e34ea10da916f9b8ba5c3'
+sha256sums=('14ef58fb2f09da1d66194527e1e8b637d28d972d273a6a627056aa960a9a9121'
             '9ee5f2b44b7e9aa751508f02c1020e341e0212a9aa146b7428eb5ffea310be27')
 build() {
     cd "cli-$pkgver"

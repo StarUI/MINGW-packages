@@ -1,14 +1,15 @@
-# Maintainer: @naveen521kk on Github, Naveen M K <naveen@syrusdark.website>
+# Maintainer: @naveen521kk on Github, Naveen M K <naveen521kk@gmail.com>
 
 _realname=texlive-lang-french
 pkgbase=mingw-w64-${_realname}
 pkgname="${MINGW_PACKAGE_PREFIX}-${_realname}"
-pkgver=2021.20210506
+pkgver=2021.20210519
 _revnr=${pkgver#2021.}
-pkgrel=1
+pkgrel=2
 pkgdesc="TeX Live - French (mingw-w64)"
 license=('GPL')
 arch=('any')
+mingw_arch=('mingw32' 'mingw64' 'ucrt64' 'clang64')
 depends=(
     "${MINGW_PACKAGE_PREFIX}-texlive-core"
 )
@@ -23,8 +24,8 @@ source=("${_realname}-${_revnr}.tar.xz::https://github.com/msys2/msys2-texlive/r
     "${_realname}-extra-files.tar.xz::https://github.com/msys2/msys2-texlive/releases/download/${_revnr}/${_realname}-extra-files.tar.xz")
 options=('!emptydirs')
 sha256sums=(
-    "e2f3eff04db352bc63278f9e2029217dd0770e4a1421ec6544579f80955cd8eb"
-    "122cd0bb529fb2d38d348d5a2cd5e754aa80e648e0ac0b7b58a76d8304aad650"
+    "4fd124bf504ffc7957e4f19aa503668250b9f696e7623962fa4de185e3deeae9"
+    "cfc9e194d27dc055d209654cce6478b337aa783af17c59c8d719833b0736c85b"
 )
 
 build() {
