@@ -4,8 +4,8 @@ source "$(dirname ${BASH_SOURCE[0]})"/../mingw-w64-PKGBUILD-common/kde-framework
 _realname=breeze
 pkgbase="mingw-w64-${_realname}"
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}")
-pkgver=6.0.4
-pkgrel=2
+pkgver=6.1.1
+pkgrel=1
 pkgdesc="Artwork, styles and assets for the Breeze visual style for the Plasma Desktop (mingw-w64)"
 arch=('any')
 mingw_arch=('ucrt64' 'clang64' 'clangarm64')
@@ -18,7 +18,6 @@ license=('spdx:LGPL-3.0-or-later')
 depends=("${MINGW_PACKAGE_PREFIX}-hicolor-icon-theme"
          "${MINGW_PACKAGE_PREFIX}-breeze-icons"
          "${MINGW_PACKAGE_PREFIX}-gcc-libs"
-         "${MINGW_PACKAGE_PREFIX}-kcmutils"
          "${MINGW_PACKAGE_PREFIX}-kcolorscheme"
          "${MINGW_PACKAGE_PREFIX}-kconfig"
          "${MINGW_PACKAGE_PREFIX}-kcoreaddons"
@@ -33,38 +32,21 @@ makedepends=("${MINGW_PACKAGE_PREFIX}-7zip"
              "${MINGW_PACKAGE_PREFIX}-cc"
              "${MINGW_PACKAGE_PREFIX}-cmake"
              "${MINGW_PACKAGE_PREFIX}-extra-cmake-modules"
+             "${MINGW_PACKAGE_PREFIX}-gettext-tools"
              "${MINGW_PACKAGE_PREFIX}-ninja"
              "${MINGW_PACKAGE_PREFIX}-python"
              "${MINGW_PACKAGE_PREFIX}-qt6-tools")
 groups=("${MINGW_PACKAGE_PREFIX}-plasma")
-source=("https://download.kde.org/stable/plasma/${pkgver}/${_realname}-${pkgver}.tar.xz"{,.sig}
-        https://invent.kde.org/plasma/breeze/-/commit/ddc60e2337249d7997c6333b746efd0e9b458234.patch
-        001-breeze-settings-win32.patch)
+source=("https://download.kde.org/stable/plasma/${pkgver}/${_realname}-${pkgver}.tar.xz"{,.sig})
 noextract=("${_realname}-${pkgver}.tar.xz")
-sha256sums=('911979889191395c333219e09090208c658f943b9953e420fc629242fd5e5c76'
-            'SKIP'
-            'b8201448796a51a45fb647dd9133d828ebf6f4182f40a57d2d189f1350c4e25c'
-            '21224c9cc384fdc19165dda67d3bacb01aefeb84a90eba0dc7548350dce8237d')
+sha256sums=('8943ff74c4cb16b1b3c03eea0cca39821d444bea60dc163ff18e2bd313609725'
+            'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D') # Jonathan Esk-Riddell <jr@jriddell.org>
-
-apply_patch_with_msg() {
-  for _fname in "$@"
-  do
-    msg2 "Applying ${_fname}"
-    patch -Nbp1 -i "${srcdir}"/${_fname}
-  done
-}
 
 prepare() {
   7z x -bso0 -bsp0 "${_realname}-${pkgver}.tar.xz"
   7z x -bso0 -bsp0 -ttar "${_realname}-${pkgver}.tar"
   python "$(dirname ${BASH_SOURCE[0]})"/../mingw-w64-PKGBUILD-common/replace-symlinks.py "${_realname}-${pkgver}"
-
-  cd ${_realname}-${pkgver}
-
-  apply_patch_with_msg \
-    001-breeze-settings-win32.patch \
-    ddc60e2337249d7997c6333b746efd0e9b458234.patch
 }
 
 build() {

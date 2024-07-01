@@ -4,7 +4,7 @@ _realname=gst-plugins-good
 pkgbase=mingw-w64-${_realname}
 pkgname=("${MINGW_PACKAGE_PREFIX}-${_realname}"
          "${MINGW_PACKAGE_PREFIX}-gst-plugin-gtk")
-pkgver=1.24.3
+pkgver=1.24.5
 pkgrel=1
 pkgdesc="GStreamer Multimedia Framework Base Plugins (mingw-w64)"
 arch=('any')
@@ -41,7 +41,7 @@ depends=("${MINGW_PACKAGE_PREFIX}-bzip2"
 conflicts=("${MINGW_PACKAGE_PREFIX}-gst-plugins-ugly<1.24.0"
            "${MINGW_PACKAGE_PREFIX}-gst-plugins-bad<1.16.0")
 source=("${url}/src/${_realname}/${_realname}-${pkgver}.tar.xz"{,.asc})
-sha256sums=('150f914e61dc05600b68b88ca103c7cc227130158e389ea9ea159f4050a2ebb0'
+sha256sums=('badcfc5292b035bde99a77327d468b2f0b116b40420bc9f25fb8e3970824ba75'
             'SKIP')
 validpgpkeys=('D637032E45B8C6585B9456565D2EEE6F6F349D7C') # Tim Müller <tim@gstreamer-foundation.org>
 
